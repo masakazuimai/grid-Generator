@@ -418,7 +418,7 @@ const App = () => {
 
 /* 子要素の共通スタイル（プレースホルダー） */
 .grid-container > div {
-  background-color: #be3455;
+  background-color: gray;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -456,7 +456,7 @@ const App = () => {
 
 /* 子要素の共通スタイル（プレースホルダー） */
 .grid-container > div {
-  background-color: #be3455;
+  background-color: gray;
   display: flex;
   justify-content: center;
   align-items: center;
