@@ -438,7 +438,21 @@ const App = () => {
 }
 `
                     )
-                    .join("\n")
+                    .join("\n") +
+                  `
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .grid-container > div {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+}
+`
               )
             }
           >
@@ -478,6 +492,21 @@ const App = () => {
 `
               )
               .join("\n")}
+          </pre>
+          <pre>
+            {`
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .grid-container > div {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+}`}
           </pre>
         </div>
       </div>
