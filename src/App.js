@@ -134,17 +134,32 @@ const App = () => {
       const startCol = Math.min(...selectedCols);
       const endCol = Math.max(...selectedCols);
 
-      setGridItems((prev) => [
-        ...prev,
-        {
-          id: `div-${prev.length + 1}`,
-          startRow,
-          endRow,
-          startCol,
-          endCol,
-          content: `${prev.length + 1}`,
-        },
-      ]);
+      // 既存アイテムとの重複チェック
+      const hasOverlap = gridItems.some((item) => {
+        const rowOverlap = startRow <= item.endRow && endRow >= item.startRow;
+        const colOverlap = startCol <= item.endCol && endCol >= item.startCol;
+        return rowOverlap && colOverlap;
+      });
+
+      if (hasOverlap) {
+        toast.warning("既存のアイテムと重複しています", {
+          position: "bottom-center",
+          hideProgressBar: true,
+          autoClose: 1500,
+        });
+      } else {
+        setGridItems((prev) => [
+          ...prev,
+          {
+            id: `div-${prev.length + 1}`,
+            startRow,
+            endRow,
+            startCol,
+            endCol,
+            content: `${prev.length + 1}`,
+          },
+        ]);
+      }
     }
 
     setSelectedCells([]);
