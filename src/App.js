@@ -414,7 +414,19 @@ const App = () => {
   gap: ${gap}px;
   width: ${containerWidth}${containerWidthUnit};
   height: ${containerHeight}${containerHeightUnit};
-}\n` +
+}
+
+/* 子要素の共通スタイル（プレースホルダー） */
+.grid-container > div {
+  background-color: #be3455;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+` +
                   gridItems
                     .map(
                       (item) => `
@@ -423,14 +435,6 @@ const App = () => {
   grid-row: ${item.startRow} / span ${item.endRow - item.startRow + 1};
   width: ${getItemWidth()};
   height: ${getItemHeight()};
-  /* プレースホルダー用スタイル */
-  background-color: #be3455;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #fff;
 }
 `
                     )
@@ -448,6 +452,17 @@ const App = () => {
   gap: ${gap}px;
   width: ${containerWidth}${containerWidthUnit};
   height: ${containerHeight}${containerHeightUnit};
+}
+
+/* 子要素の共通スタイル（プレースホルダー） */
+.grid-container > div {
+  background-color: #be3455;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
 }`}
           </pre>
           <pre>
@@ -459,14 +474,6 @@ const App = () => {
   grid-row: ${item.startRow} / span ${item.endRow - item.startRow + 1};
   width: ${getItemWidth()};
   height: ${getItemHeight()};
-  /* プレースホルダー用スタイル */
-  background-color: #be3455;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #fff;
 }
 `
               )
