@@ -23,13 +23,33 @@ header {
   background: #f5f5f5;
   padding: 1em;
   border-radius: 8px;
-  margin: 0 1em;
+  margin: 0 auto;
+  position: relative;
+  box-sizing: border-box;
+  max-width: calc(100% - 2rem);
 }
 
 .controls-label {
   font-weight: bold;
   display: flex;
   align-items: center;
+}
+
+.guide-link {
+  position: absolute;
+  right: 1em;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.5em 1em;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.guide-link:hover {
+  text-decoration: underline;
 }
 
 label {
@@ -187,6 +207,117 @@ footer.footer {
   left: 50%;
 }
 
+/* ヘッダーサブタイトル */
+.header-sub {
+  display: block;
+  font-size: 0.5em;
+  font-weight: normal;
+  opacity: 0.9;
+  margin-top: 4px;
+}
+
+/* 使い方セクション */
+.how-to-use {
+  max-width: 1000px;
+  margin: 2em auto;
+  padding: 0 1em;
+}
+
+.how-to-use h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1em;
+  color: #333;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5em;
+}
+
+.step {
+  background: #f9f7f5;
+  border: 1px solid #e0d8d0;
+  border-radius: 8px;
+  padding: 1.5em;
+}
+
+.step h3 {
+  color: #bfa88f;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-size: 1.1rem;
+}
+
+.step p {
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* FAQセクション */
+.faq-section {
+  max-width: 800px;
+  margin: 2em auto;
+  padding: 0 1em;
+}
+
+.faq-section h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1em;
+  color: #333;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.faq-item {
+  background: #f9f7f5;
+  border: 1px solid #e0d8d0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.faq-item summary {
+  padding: 1em 1.5em;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.faq-item summary::before {
+  content: "Q.";
+  color: #bfa88f;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item[open] summary {
+  border-bottom: 1px solid #e0d8d0;
+}
+
+.faq-item p {
+  padding: 1em 1.5em;
+  margin: 0;
+  color: #555;
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
 /* スマートフォン対応 */
 @media (max-width: 768px) {
   .grid-container {
@@ -208,5 +339,9 @@ footer.footer {
   .output-html,
   .output {
     width: 100%;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
   }
 }

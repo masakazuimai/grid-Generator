@@ -176,8 +176,8 @@ const App = () => {
       />
 
       <header>
-        <h1>CSS Grid Generator</h1>
-        <p>ドラッグ操作でグリッドレイアウトを視覚的に作成し、HTML/CSSコードを自動生成</p>
+        <h1>CSS Grid Generator<span className="header-sub">グリッドジェネレーター</span></h1>
+        <p>ドラッグ操作で<strong>CSSグリッドレイアウト</strong>を視覚的に作成し、HTML/CSSコードを自動生成する無料ツール</p>
       </header>
       <div className="controls">
         <label>
@@ -256,7 +256,12 @@ const App = () => {
         </label>
         <button onClick={resetGrid}>Reset Grid</button>
       </div>
-      <div className="controls controls-items">
+      <div
+        className="controls controls-items"
+        style={{
+          width: `calc(${columns} * 200px + ${(columns - 1) * gap}px - 2em)`,
+        }}
+      >
         <span className="controls-label">Item Size:</span>
         <label>
           Item Width:
@@ -330,6 +335,9 @@ const App = () => {
             )}
           </div>
         </label>
+        <a href="/generator/grid/guide/" className="guide-link" target="_blank" rel="noopener noreferrer">
+          使い方・FAQ
+        </a>
       </div>
       <div
         className="grid-container"

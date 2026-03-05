@@ -27,16 +27,16 @@
     <meta name="author" content="CodeQuest" />
     <meta
       name="description"
-      content="CSS Gridレイアウトを視覚的に作成できる無料ツール。ドラッグ操作でグリッドを配置し、HTML/CSSコードを自動生成。初心者でも簡単にレスポンシブなグリッドレイアウトが作れます。"
+      content="CSS Grid Generator（グリッドジェネレーター）は、CSSグリッドレイアウトを視覚的に作成できる無料ツール。ドラッグ操作でグリッドを配置し、HTML/CSSコードを自動生成。初心者でも簡単にレスポンシブなグリッドレイアウトが作れます。"
     />
     <meta
       name="keywords"
-      content="CSS Grid Generator, CSS Grid, グリッドレイアウト, CSSジェネレーター, レイアウト作成, Webデザイン, CSS生成ツール, grid-template, グリッドコード生成, 無料ツール"
+      content="CSS Grid Generator, grid generator, grid ジェネレーター, グリッドジェネレーター, CSS Grid, CSSグリッド, グリッドレイアウト, CSSジェネレーター, レイアウト作成, Webデザイン, CSS生成ツール, grid-template, グリッドコード生成, 無料ツール"
     />
 
     <!-- OGP (Open Graph Protocol) -->
     <meta property="og:site_name" content="CodeQuest" />
-    <meta property="og:title" content="CSS Grid Generator - 視覚的にグリッドレイアウトを作成" />
+    <meta property="og:title" content="CSS Grid Generator（グリッドジェネレーター）- 視覚的にCSSグリッドレイアウトを作成" />
     <meta
       property="og:description"
       content="ドラッグ操作でCSS Gridレイアウトを作成し、HTML/CSSコードを自動生成。初心者から上級者まで使える無料ツール。"
@@ -48,7 +48,7 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="CSS Grid Generator - 視覚的にグリッドレイアウトを作成" />
+    <meta name="twitter:title" content="CSS Grid Generator（グリッドジェネレーター）- 視覚的にCSSグリッドレイアウトを作成" />
     <meta
       name="twitter:description"
       content="ドラッグ操作でCSS Gridレイアウトを作成し、HTML/CSSコードを自動生成。初心者から上級者まで使える無料ツール。"
@@ -66,18 +66,20 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
     <!-- タイトル -->
-    <title>CSS Grid Generator | 無料でグリッドレイアウトを作成 - CodeQuest</title>
+    <title>CSS Grid Generator | グリッドジェネレーター - 無料でCSSグリッドレイアウトを作成 - CodeQuest</title>
 
-    <!-- 構造化データ (JSON-LD) -->
+    <!-- 構造化データ (JSON-LD) - WebApplication -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebApplication",
-        "name": "CSS Grid Generator",
-        "description": "CSS Gridレイアウトを視覚的に作成できる無料ツール。ドラッグ操作でグリッドを配置し、HTML/CSSコードを自動生成。",
+        "name": "CSS Grid Generator（グリッドジェネレーター）",
+        "alternateName": ["Grid Generator", "グリッドジェネレーター", "CSSグリッドジェネレーター"],
+        "description": "CSS Grid Generator（グリッドジェネレーター）は、CSSグリッドレイアウトを視覚的に作成できる無料ツール。ドラッグ操作でグリッドを配置し、HTML/CSSコードを自動生成。",
         "url": "https://codequest.work/generator/grid/",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "All",
+        "inLanguage": "ja",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -88,6 +90,56 @@
           "name": "CodeQuest",
           "url": "https://codequest.work/"
         }
+      }
+    </script>
+
+    <!-- 構造化データ (JSON-LD) - FAQ -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "CSS Grid Generatorとは何ですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CSS Grid Generator（グリッドジェネレーター）は、CSSグリッドレイアウトを視覚的に作成できる無料のオンラインツールです。ドラッグ操作でグリッドアイテムを配置し、対応するHTML/CSSコードを自動生成します。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "CSS Gridとは何ですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CSS Grid（CSSグリッド）は、Webページのレイアウトを2次元（行と列）で制御できるCSSの仕組みです。grid-template-columns、grid-template-rows、gapなどのプロパティを使って、複雑なレイアウトを簡単に作成できます。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "グリッドジェネレーターの使い方は？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "1. 列数（Columns）と行数（Rows）を設定します。2. グリッド上でドラッグしてアイテムを配置します。3. 生成されたHTML/CSSコードをコピーして、プロジェクトに貼り付けます。Gap、幅、高さなどもカスタマイズ可能です。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "CSS GridとFlexboxの違いは？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CSS Gridは2次元レイアウト（行と列の同時制御）に適しており、Flexboxは1次元レイアウト（行または列のどちらか）に適しています。ページ全体のレイアウトにはGrid、コンポーネント内の配置にはFlexboxを使うのが一般的です。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "このツールは無料で使えますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "はい、CSS Grid Generator（グリッドジェネレーター）は完全無料でご利用いただけます。アカウント登録も不要で、ブラウザ上ですぐにグリッドレイアウトの作成を始められます。"
+            }
+          }
+        ]
       }
     </script>
   </head>
