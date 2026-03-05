@@ -1,12 +1,28 @@
-import React, { useState } from "react";
+"use client";
+
+import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "./style.css";
 
 const UNITS = ["px", "%", "vw", "vh", "em", "rem"];
 const ITEM_SIZE_OPTIONS = ["auto", "100%", "custom"];
 
-const App = () => {
+type GridItem = {
+  id: string;
+  startRow: number;
+  endRow: number;
+  startCol: number;
+  endCol: number;
+  content: string;
+};
+
+type Cell = {
+  id: string;
+  row: number;
+  col: number;
+};
+
+export function GridGenerator() {
   const [columns, setColumns] = useState(5);
   const [rows, setRows] = useState(5);
   const [gap, setGap] = useState(8);
@@ -21,8 +37,8 @@ const App = () => {
   const [itemHeightOption, setItemHeightOption] = useState("100%");
   const [itemHeightValue, setItemHeightValue] = useState(100);
   const [itemHeightUnit, setItemHeightUnit] = useState("px");
-  const [selectedCells, setSelectedCells] = useState([]);
-  const [gridItems, setGridItems] = useState([]);
+  const [selectedCells, setSelectedCells] = useState<string[]>([]);
+  const [gridItems, setGridItems] = useState<GridItem[]>([]);
   const [isSelecting, setIsSelecting] = useState(false);
 
   // 子要素のサイズ文字列を取得
@@ -41,7 +57,7 @@ const App = () => {
   };
 
   // クリップボードにコピー
-  const copyToClipboard = (text) => {
+  const copyToClipboard = (text: string) => {
     navigator.clipboard
       .writeText(text)
       .then(() =>
@@ -80,10 +96,9 @@ const App = () => {
   };
 
   // 個別のグリッドアイテムを削除（ダブルクリック）
-  const handleItemDoubleClick = (itemId) => {
+  const handleItemDoubleClick = (itemId: string) => {
     setGridItems((prev) => {
       const filtered = prev.filter((item) => item.id !== itemId);
-      // 番号を振り直す
       return filtered.map((item, index) => ({
         ...item,
         id: `div-${index + 1}`,
@@ -97,8 +112,8 @@ const App = () => {
     });
   };
 
-  const generateCells = () => {
-    const cells = [];
+  const generateCells = (): Cell[] => {
+    const cells: Cell[] = [];
     for (let row = 1; row <= rows; row++) {
       for (let col = 1; col <= columns; col++) {
         cells.push({ id: `${row}-${col}`, row, col });
@@ -109,12 +124,12 @@ const App = () => {
 
   const cells = generateCells();
 
-  const handleMouseDown = (cellId) => {
+  const handleMouseDown = (cellId: string) => {
     setSelectedCells([cellId]);
     setIsSelecting(true);
   };
 
-  const handleMouseEnter = (cellId) => {
+  const handleMouseEnter = (cellId: string) => {
     if (isSelecting) {
       setSelectedCells((prev) => [...new Set([...prev, cellId])]);
     }
@@ -167,7 +182,7 @@ const App = () => {
   };
 
   return (
-    <div className="app-container">
+    <>
       <ToastContainer
         position="bottom-center"
         hideProgressBar={true}
@@ -175,10 +190,6 @@ const App = () => {
         className="custom-toast-container"
       />
 
-      <header>
-        <h1>CSS Grid Generator<span className="header-sub">グリッドジェネレーター</span></h1>
-        <p>ドラッグ操作で<strong>CSSグリッドレイアウト</strong>を視覚的に作成し、HTML/CSSコードを自動生成する無料ツール</p>
-      </header>
       <div className="controls">
         <label>
           Columns:
@@ -217,7 +228,9 @@ const App = () => {
               type="number"
               value={containerWidth}
               onChange={(e) =>
-                setContainerWidth(Math.max(0, parseFloat(e.target.value) || 0))
+                setContainerWidth(
+                  Math.max(0, parseFloat(e.target.value) || 0)
+                )
               }
             />
             <select
@@ -239,7 +252,9 @@ const App = () => {
               type="number"
               value={containerHeight}
               onChange={(e) =>
-                setContainerHeight(Math.max(0, parseFloat(e.target.value) || 0))
+                setContainerHeight(
+                  Math.max(0, parseFloat(e.target.value) || 0)
+                )
               }
             />
             <select
@@ -282,7 +297,9 @@ const App = () => {
                   type="number"
                   value={itemWidthValue}
                   onChange={(e) =>
-                    setItemWidthValue(Math.max(0, parseFloat(e.target.value) || 0))
+                    setItemWidthValue(
+                      Math.max(0, parseFloat(e.target.value) || 0)
+                    )
                   }
                 />
                 <select
@@ -318,7 +335,9 @@ const App = () => {
                   type="number"
                   value={itemHeightValue}
                   onChange={(e) =>
-                    setItemHeightValue(Math.max(0, parseFloat(e.target.value) || 0))
+                    setItemHeightValue(
+                      Math.max(0, parseFloat(e.target.value) || 0)
+                    )
                   }
                 />
                 <select
@@ -335,7 +354,12 @@ const App = () => {
             )}
           </div>
         </label>
-        <a href="/generator/grid/guide/" className="guide-link" target="_blank" rel="noopener noreferrer">
+        <a
+          href="/generator/grid/guide/"
+          className="guide-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           使い方・FAQ
         </a>
       </div>
@@ -397,7 +421,8 @@ const App = () => {
               copyToClipboard(
                 `<div class="grid-container">\n${gridItems
                   .map(
-                    (item) => `  <div class="${item.id}">${item.content}</div>`
+                    (item) =>
+                      `  <div class="${item.id}">${item.content}</div>`
                   )
                   .join("\n")}\n</div>`
               )
@@ -406,7 +431,9 @@ const App = () => {
             Copy
           </button>
           <pre>{`<div class="grid-container">\n${gridItems
-            .map((item) => `  <div class="${item.id}">${item.content}</div>`)
+            .map(
+              (item) => `  <div class="${item.id}">${item.content}</div>`
+            )
             .join("\n")}\n</div>`}</pre>
         </div>
         <div className="output">
@@ -518,27 +545,6 @@ const App = () => {
           </pre>
         </div>
       </div>
-      <footer className="footer">
-        <p>
-          © {new Date().getFullYear()} CSS Grid Generator |{" "}
-          <a
-            href="https://codequest.work/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Created by CodeQuest
-          </a>
-          <a
-            href="https://codequest.work/generator/flex/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            | Flex Generator
-          </a>
-        </p>
-      </footer>
-    </div>
+    </>
   );
-};
-
-export default App;
+}
