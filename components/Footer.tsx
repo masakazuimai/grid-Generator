@@ -8,7 +8,7 @@ export function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          CodeQuest
+          CodeQuest.work
         </a>
         <a
           href="https://seo.codequest.work/ja"
