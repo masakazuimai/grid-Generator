@@ -2,20 +2,27 @@ export function Footer() {
   return (
     <footer className="footer">
       <p>
-        &copy; {new Date().getFullYear()} CSS Grid Generator |{" "}
+        &copy; {new Date().getFullYear()} CSS Grid Generator | Created by{" "}
         <a
           href="https://codequest.work/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Created by CodeQuest
+          CodeQuest
         </a>
         <a
-          href="https://codequest.work/generator/flex/"
+          href="https://seo.codequest.work/ja"
           target="_blank"
           rel="noopener noreferrer"
         >
-          | Flex Generator
+          | SEO CHECKはこちら →
+        </a>
+        <a
+          href="https://codequest.work/tag/generator/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          | その他のジェネレーター →
         </a>
       </p>
     </footer>
