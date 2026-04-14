@@ -37,6 +37,24 @@ export const webApplicationJsonLd = {
     priceCurrency: "JPY",
   },
   author: {
+    "@type": "Person",
+    name: "今井政和",
+    alternateName: "Masakazu Imai",
+    url: "https://codequest.work/author/masakazu_imai/",
+    jobTitle: "エグゼクティブディレクター / フロントエンドエンジニア",
+    description:
+      "20年以上の経験を持つWeb制作者。フロントエンド開発からSEO、チームマネジメントまで対応。",
+    sameAs: [
+      "https://x.com/imai_director",
+      "https://github.com/masakazuimai",
+    ],
+    worksFor: {
+      "@type": "Organization",
+      name: "CodeQuest.work",
+      url: "https://codequest.work/",
+    },
+  },
+  publisher: {
     "@type": "Organization",
     name: "CodeQuest.work",
     url: "https://codequest.work/",
@@ -154,9 +172,22 @@ export const guideArticleJsonLd = {
     "CSS Grid Generatorの使い方を3ステップで解説。CSS GridとFlexboxの違いなど、よくある質問にもお答えします。",
   url: "https://codequest.work/generator/grid/guide/",
   author: {
-    "@type": "Organization",
-    name: "CodeQuest.work",
-    url: "https://codequest.work/",
+    "@type": "Person",
+    name: "今井政和",
+    alternateName: "Masakazu Imai",
+    url: "https://codequest.work/author/masakazu_imai/",
+    jobTitle: "エグゼクティブディレクター / フロントエンドエンジニア",
+    description:
+      "20年以上の経験を持つWeb制作者。フロントエンド開発からSEO、チームマネジメントまで対応。",
+    sameAs: [
+      "https://x.com/imai_director",
+      "https://github.com/masakazuimai",
+    ],
+    worksFor: {
+      "@type": "Organization",
+      name: "CodeQuest.work",
+      url: "https://codequest.work/",
+    },
   },
   publisher: {
     "@type": "Organization",
