@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
+import { CodeBlock } from "@/components/CodeBlock";
 import {
   presets,
   getPresetBySlug,
@@ -153,10 +154,10 @@ export default async function PresetDetailPage({ params }: Props) {
       </div>
 
       <h2>HTML</h2>
-      <pre className="preset-code-block">{htmlCode}</pre>
+      <CodeBlock code={htmlCode} label="HTML" />
 
       <h2>CSS</h2>
-      <pre className="preset-code-block">{cssCode}</pre>
+      <CodeBlock code={cssCode} label="CSS" />
 
       <h2>このレイアウトの解説</h2>
       <p>{preset.explanation}</p>
