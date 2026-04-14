@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { GridGenerator } from "@/components/GridGenerator";
 import { Footer } from "@/components/Footer";
+import { presets } from "@/lib/presets";
 import "@/styles/preset.css";
 import { JsonLd } from "@/components/JsonLd";
 import {
@@ -55,32 +57,35 @@ export default function HomePage() {
 
       <GridGenerator />
 
-      <section
-        style={{
-          maxWidth: "1000px",
-          margin: "2em auto",
-          padding: "0 1.5em",
-          fontSize: "16px",
-          lineHeight: 1.8,
-        }}
-      >
-        <h2 style={{ fontSize: "22px", marginBottom: "0.5em" }}>
-          定番レイアウトプリセット
-        </h2>
-        <p>
-          ホーリーグレイル・12カラム・カードギャラリー・ダッシュボードなど、
-          CSS Gridで作る定番レイアウト10種をコピペで使えるプリセットとして公開しています。
+      <section className="preset-page">
+        <h2>定番レイアウトプリセット</h2>
+        <p className="preset-lead">
+          ホーリーグレイル・12カラム・カードギャラリー・ダッシュボードなど、CSS
+          Gridで作る定番レイアウト{presets.length}
+          種をコピペで使えるプリセットとして公開しています。
         </p>
-        <p>
-          <a href="/generator/grid/preset/">
-            レイアウトプリセット集を見る →
-          </a>
-        </p>
-        <p>
-          <a href="/generator/grid/guide/">
-            使い方・FAQを見る →
-          </a>
-        </p>
+        <div className="preset-index-grid">
+          {presets.map((preset) => (
+            <Link
+              key={preset.slug}
+              href={`/preset/${preset.slug}/`}
+              className="preset-index-card"
+            >
+              <span className="preset-index-category">{preset.category}</span>
+              <div className="preset-index-title">{preset.shortTitle}</div>
+              <p className="preset-index-desc">{preset.description}</p>
+            </Link>
+          ))}
+          <Link href="/guide/" className="preset-index-card">
+            <span className="preset-index-category">ガイド</span>
+            <div className="preset-index-title">使い方・FAQ</div>
+            <p className="preset-index-desc">
+              CSS Grid
+              Generatorの基本操作、よくある質問、CSS
+              GridとFlexboxの使い分けなどを初心者向けに解説しています。
+            </p>
+          </Link>
+        </div>
       </section>
 
       <Footer />
