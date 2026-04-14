@@ -11,20 +11,22 @@ import {
 
 export const metadata: Metadata = {
   title:
-    "CSS Grid Generator | グリッドジェネレーター - 無料でCSSグリッドレイアウトを作成 - CodeQuest",
+    "CSSジェネレーター | CSS Grid Generator - グリッドレイアウトを無料作成",
+  description:
+    "CSSジェネレーター無料ツール。ドラッグ操作でCSSグリッドレイアウトを視覚的に作成し、HTML/CSSコードを自動生成します。登録不要・初心者OK。",
   openGraph: {
     title:
-      "CSS Grid Generator（グリッドジェネレーター）- 視覚的にCSSグリッドレイアウトを作成",
+      "CSSジェネレーター | CSS Grid Generator - グリッドレイアウトを無料作成",
     description:
-      "ドラッグ操作でCSS Gridレイアウトを作成し、HTML/CSSコードを自動生成。初心者から上級者まで使える無料ツール。",
+      "ドラッグ操作でCSSグリッドレイアウトを視覚的に作成し、HTML/CSSコードを自動生成する無料のCSSジェネレーター。",
     images: ["/generator/grid/og-image.png"],
     url: "https://codequest.work/generator/grid/",
   },
   twitter: {
     title:
-      "CSS Grid Generator（グリッドジェネレーター）- 視覚的にCSSグリッドレイアウトを作成",
+      "CSSジェネレーター | CSS Grid Generator - グリッドレイアウトを無料作成",
     description:
-      "ドラッグ操作でCSS Gridレイアウトを作成し、HTML/CSSコードを自動生成。初心者から上級者まで使える無料ツール。",
+      "ドラッグ操作でCSSグリッドレイアウトを視覚的に作成し、HTML/CSSコードを自動生成する無料のCSSジェネレーター。",
     images: ["/generator/grid/og-image.png"],
   },
   alternates: {

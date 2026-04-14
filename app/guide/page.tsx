@@ -12,10 +12,16 @@ import {
 import "@/styles/guide.css";
 
 export const metadata: Metadata = {
-  title: "CSS Grid Generator の使い方 | グリッドジェネレーター ガイド",
+  title: {
+    absolute:
+      "CSSジェネレーターの使い方ガイド | CSS Grid Generator - CodeQuest.work",
+  },
   description:
-    "CSS Grid Generator（グリッドジェネレーター）の使い方ガイド。ドラッグ操作でCSSグリッドレイアウトを作成する方法を3ステップで解説。CSS GridとFlexboxの違いなど、よくある質問にもお答えします。",
+    "無料CSSジェネレーターの使い方ガイド。CSS Grid Generatorでドラッグ操作によるグリッドレイアウト作成、CSS GridとFlexboxの違い、他のCSSジェネレーターとの比較、よくある質問まで初心者向けに解説します。",
   keywords: [
+    "CSSジェネレーター 使い方",
+    "CSSジェネレーター おすすめ",
+    "CSSジェネレーター 無料",
     "CSS Grid Generator 使い方",
     "グリッドジェネレーター 使い方",
     "CSS Grid 使い方",
@@ -23,19 +29,22 @@ export const metadata: Metadata = {
     "grid generator how to use",
     "CSS Grid チュートリアル",
     "グリッドレイアウト 作り方",
+    "CSS生成ツール",
   ],
   openGraph: {
-    title: "CSS Grid Generator（グリッドジェネレーター）の使い方ガイド",
+    title:
+      "CSSジェネレーターの使い方ガイド | CSS Grid Generator 完全マニュアル",
     description:
-      "CSS Grid Generatorの使い方を3ステップで解説。CSS GridとFlexboxの違いなど、よくある質問にもお答えします。",
+      "CSSジェネレーター無料ツールの使い方を3ステップで解説。CSS GridとFlexboxの違い、他ツールとの比較、よくある質問まで網羅。",
     images: ["/generator/grid/og-image.png"],
     url: "https://codequest.work/generator/grid/guide/",
     type: "article",
   },
   twitter: {
-    title: "CSS Grid Generator（グリッドジェネレーター）の使い方ガイド",
+    title:
+      "CSSジェネレーターの使い方ガイド | CSS Grid Generator 完全マニュアル",
     description:
-      "CSS Grid Generatorの使い方を3ステップで解説。CSS GridとFlexboxの違いなど、よくある質問にもお答えします。",
+      "CSSジェネレーター無料ツールの使い方を3ステップで解説。CSS GridとFlexboxの違い、他ツールとの比較、よくある質問まで網羅。",
     images: ["/generator/grid/og-image.png"],
   },
   alternates: {
@@ -60,9 +69,58 @@ export default function GuidePage() {
       </header>
 
       <nav className="breadcrumb" aria-label="パンくずリスト">
-        <a href="https://codequest.work/">CodeQuest</a> &gt;{" "}
+        <a href="https://codequest.work/">CodeQuest.work</a> &gt;{" "}
         <Link href="/">CSS Grid Generator</Link> &gt; 使い方ガイド
       </nav>
+
+      {/* CSSジェネレーターとは */}
+      <section className="detail-section">
+        <h2>CSSジェネレーターとは</h2>
+        <p>
+          <strong>CSSジェネレーター</strong>とは、複雑なCSSコードを手書きせずに、
+          視覚的な操作で自動生成できるWebツールの総称です。グリッドレイアウト・
+          フレックスボックス・グラデーション・シャドウ・アニメーションなど、
+          CSSのプロパティごとに専用のCSSジェネレーターが存在します。
+        </p>
+        <p>
+          本サイト「<strong>CSS Grid Generator</strong>
+          」は、CSSジェネレーターの中でも特に
+          <strong>CSS Gridレイアウト</strong>
+          の作成に特化した無料ツールです。ドラッグ操作だけで
+          <code>grid-template-columns</code>・<code>grid-template-rows</code>・
+          <code>gap</code>などのプロパティ値を自動計算し、
+          そのまま使えるHTML/CSSコードを出力します。
+        </p>
+
+        <h3>CSSジェネレーターを使うメリット</h3>
+        <ul className="property-list">
+          <li>
+            <strong>学習コストの削減</strong> —
+            CSS Gridのプロパティ名や値の書き方を覚えなくても、視覚操作で結果を確認できます
+          </li>
+          <li>
+            <strong>試行錯誤の高速化</strong> —
+            コードを書き換えてブラウザでリロードする手間がなく、リアルタイムにレイアウトを確認できます
+          </li>
+          <li>
+            <strong>正確なコード出力</strong> —
+            人間が書くと発生しがちなタイポやプロパティ名のミスがありません
+          </li>
+          <li>
+            <strong>初心者でも安心</strong> —
+            CSSの構文を知らなくても、ドラッグ操作だけでプロ品質のレイアウトが完成します
+          </li>
+        </ul>
+
+        <h3>無料CSSジェネレーターは安全？</h3>
+        <p>
+          CSSジェネレーターを選ぶ際は、
+          <strong>「処理がブラウザ内で完結するか」</strong>
+          を確認しましょう。本ツール「CSS Grid Generator」は、
+          すべての処理がお使いのブラウザ上で実行され、入力データが外部サーバーに送信されることはありません。
+          完全無料・登録不要で、安心してご利用いただけます。
+        </p>
+      </section>
 
       {/* 使い方セクション */}
       <section className="how-to-use">
@@ -207,6 +265,92 @@ export default function GuidePage() {
         </p>
       </section>
 
+      {/* 他のCSSジェネレーター */}
+      <section className="detail-section">
+        <h2>他のCSSジェネレーターとの違い・比較</h2>
+        <p>
+          世の中には様々な<strong>CSSジェネレーター</strong>
+          が存在しますが、それぞれ得意分野が異なります。
+          ここではCSS Grid Generatorと、よく使われる他ジャンルのCSSジェネレーターを比較します。
+        </p>
+        <ul className="property-list">
+          <li>
+            <strong>CSS Grid Generator（本ツール）</strong> —
+            CSSグリッドレイアウトに特化。ドラッグ操作で2次元レイアウトを作成し、
+            <code>grid-template-columns</code>などのコードを自動生成します。
+            ページ全体や複雑なカード配置に最適。
+          </li>
+          <li>
+            <strong>Flexbox Generator</strong> —
+            1次元レイアウト（横並び・縦並び）の作成に特化したCSSジェネレーター。
+            ナビゲーションバーやボタングループなど、コンポーネント内の整列に使います。
+            CSS Gridと組み合わせて使うのが推奨です。
+          </li>
+          <li>
+            <strong>グラデーションジェネレーター</strong> —
+            <code>linear-gradient</code>や<code>radial-gradient</code>
+            のコードを生成。背景色のグラデーションをカラーピッカーで指定できます。
+          </li>
+          <li>
+            <strong>シャドウジェネレーター</strong> —
+            <code>box-shadow</code>や<code>text-shadow</code>のパラメータを
+            視覚的に調整してコードを取得できるCSSジェネレーターです。
+          </li>
+          <li>
+            <strong>アニメーションジェネレーター</strong> —
+            <code>@keyframes</code>とアニメーションプロパティを生成する専用ツール。
+          </li>
+        </ul>
+        <p>
+          <strong>ページレイアウトを組むなら、まずCSS Grid Generatorで全体構造を作る</strong>
+          のが効率的です。Webサイトのワイヤーフレーム段階でグリッドを決めておくと、
+          後の実装がスムーズに進みます。
+        </p>
+      </section>
+
+      {/* ユースケース */}
+      <section className="detail-section">
+        <h2>CSS Grid Generatorのユースケース</h2>
+        <p>
+          CSSジェネレーターをどんな場面で使うのか、CSS Grid Generatorの典型的なユースケースを紹介します。
+        </p>
+
+        <h3>1. Webサイト全体のレイアウト構築</h3>
+        <p>
+          ヘッダー・サイドバー・メインコンテンツ・フッターからなるWebサイトの基本構造を、
+          CSS Grid Generatorで視覚的に組み立てられます。
+          <code>grid-template-areas</code>を意識せずに、
+          ドラッグするだけで2次元レイアウトが完成します。
+        </p>
+
+        <h3>2. カードギャラリー・ポートフォリオサイト</h3>
+        <p>
+          画像カードを格子状に並べるレイアウトは、CSS Gridの最も得意な分野です。
+          均等3列・4列のカード配置や、特定のカードだけを2列分の幅に広げるといった
+          複雑な配置も、Generatorで直感的に作成できます。
+        </p>
+
+        <h3>3. ダッシュボード・管理画面</h3>
+        <p>
+          数値カード・グラフ・テーブルを組み合わせるダッシュボード画面では、
+          要素のサイズが不揃いになりがちです。CSS Gridを使えば、
+          幅広グラフ・小さいKPIカード・テーブル領域を1つのグリッドで配置できます。
+        </p>
+
+        <h3>4. ECサイトの商品一覧ページ</h3>
+        <p>
+          ECサイトの商品リストは、レスポンシブ対応が必須です。
+          CSS Grid Generatorが出力するコードにはメディアクエリが含まれているため、
+          PC・タブレット・スマートフォンで自動的に列数が切り替わります。
+        </p>
+
+        <h3>5. ブログ記事の関連記事ブロック</h3>
+        <p>
+          ブログ記事の下部に表示する関連記事カードのレイアウトも、
+          CSS Gridなら数行のコードで実現できます。
+        </p>
+      </section>
+
       {/* FAQ セクション */}
       <section className="faq-section">
         <h2>よくある質問（FAQ）</h2>
@@ -270,6 +414,46 @@ export default function GuidePage() {
               はい。CSS Grid
               Generatorが生成するコードにはメディアクエリによるレスポンシブ対応が含まれています。
               768px以下の画面幅では、自動的に1カラムレイアウトに切り替わります。
+            </p>
+          </details>
+          <details className="faq-item">
+            <summary>CSSジェネレーターとは何ですか？</summary>
+            <p>
+              <strong>CSSジェネレーター</strong>
+              とは、複雑なCSSコードを手書きせずに視覚的な操作で自動生成できるWebツールの総称です。
+              グリッドレイアウト・フレックスボックス・グラデーション・シャドウ・アニメーションなど、
+              CSSのプロパティごとに専用のジェネレーターが存在します。CSS
+              Grid Generatorはその中でもCSS
+              Gridレイアウトに特化した無料CSSジェネレーターです。
+            </p>
+          </details>
+          <details className="faq-item">
+            <summary>おすすめの無料CSSジェネレーターはありますか？</summary>
+            <p>
+              用途に応じて使い分けるのがおすすめです。ページ全体のレイアウトには
+              <strong>CSS Grid Generator</strong>、コンポーネント内の整列には
+              <strong>Flexbox Generator</strong>
+              、装飾にはグラデーションジェネレーターやシャドウジェネレーターを組み合わせると効率的です。
+              本サイトのCSS
+              Grid Generatorは登録不要・完全無料で、初心者から上級者まで使えます。
+            </p>
+          </details>
+          <details className="faq-item">
+            <summary>
+              CSSジェネレーターで生成したコードはそのまま使えますか？
+            </summary>
+            <p>
+              はい、CSS Grid
+              Generatorが出力するHTML/CSSコードはそのままWebサイトに貼り付けて使用できます。
+              レスポンシブ対応のメディアクエリも含まれているため、追加の修正はほとんど必要ありません。
+              商用サイト・個人サイトを問わずご利用いただけます。
+            </p>
+          </details>
+          <details className="faq-item">
+            <summary>CSSジェネレーターは安全に使えますか？</summary>
+            <p>
+              本ツールはすべての処理がブラウザ上で完結するため、入力データが外部サーバーに送信されることはありません。
+              社内プロジェクトの構造を試したい場合でも、情報漏洩の心配なく安心してご利用いただけます。
             </p>
           </details>
         </div>
