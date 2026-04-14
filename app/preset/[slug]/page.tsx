@@ -114,10 +114,43 @@ export default async function PresetDetailPage({ params }: Props) {
     },
   };
 
+  const howToJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: `${preset.title}をコピペで使う方法`,
+    description: `${preset.shortTitle}のCSS Gridレイアウトを自分のプロジェクトに組み込む3ステップ。`,
+    totalTime: "PT1M",
+    tool: {
+      "@type": "HowToTool",
+      name: "CSS Grid Generator",
+    },
+    step: [
+      {
+        "@type": "HowToStep",
+        position: 1,
+        name: "HTMLをコピー",
+        text: "プリセットページの「HTML」ブロックのコピーアイコンをクリックし、HTMLコードをクリップボードに取得します。",
+      },
+      {
+        "@type": "HowToStep",
+        position: 2,
+        name: "CSSをコピーして貼り付け",
+        text: "「CSS」ブロックのコピーアイコンをクリックし、プロジェクトのスタイルシートに貼り付けます。@media (max-width: 768px) のレスポンシブ対応もそのまま含まれます。",
+      },
+      {
+        "@type": "HowToStep",
+        position: 3,
+        name: "内容をカスタマイズ",
+        text: "各 .item-N の中身を実際のコンテンツに置き換え、必要に応じて grid-template-columns / grid-template-rows / gap を調整します。自由度の高い編集は CSS Grid Generator 本体でドラッグ操作によって行えます。",
+      },
+    ],
+  };
+
   return (
     <>
       <JsonLd data={breadcrumbJsonLd} />
       <JsonLd data={articleJsonLd} />
+      <JsonLd data={howToJsonLd} />
       <div className="preset-page">
         <nav className="preset-breadcrumb">
         <Link href="/">CSS Grid Generator</Link> ／{" "}

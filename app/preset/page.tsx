@@ -84,11 +84,28 @@ const collectionJsonLd = {
   })),
 };
 
+const itemListJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "CSS Gridレイアウトプリセット一覧",
+  description:
+    "ホーリーグレイル・12カラム・カードギャラリー・ダッシュボードなど、CSS Gridで作る定番レイアウト10種の一覧。",
+  numberOfItems: presets.length,
+  itemListElement: presets.map((p, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: p.shortTitle,
+    url: `https://codequest.work/generator/grid/preset/${p.slug}/`,
+    description: p.description,
+  })),
+};
+
 export default function PresetIndexPage() {
   return (
     <>
       <JsonLd data={breadcrumbJsonLd} />
       <JsonLd data={collectionJsonLd} />
+      <JsonLd data={itemListJsonLd} />
       <div className="preset-page">
         <nav className="preset-breadcrumb">
         <Link href="/">CSS Grid Generator</Link> ／ レイアウトプリセット
