@@ -53,6 +53,30 @@ export default function HomePage() {
       </header>
 
       <GridGenerator />
+
+      <section
+        style={{
+          maxWidth: "1000px",
+          margin: "2em auto",
+          padding: "0 1.5em",
+          fontSize: "16px",
+          lineHeight: 1.8,
+        }}
+      >
+        <h2 style={{ fontSize: "22px", marginBottom: "0.5em" }}>
+          定番レイアウトプリセット
+        </h2>
+        <p>
+          ホーリーグレイル・12カラム・カードギャラリー・ダッシュボードなど、
+          CSS Gridで作る定番レイアウト10種をコピペで使えるプリセットとして公開しています。
+        </p>
+        <p>
+          <a href="/generator/grid/preset/">
+            レイアウトプリセット集を見る →
+          </a>
+        </p>
+      </section>
+
       <Footer />
     </div>
   );

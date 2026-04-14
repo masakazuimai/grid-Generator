@@ -464,6 +464,11 @@ export default function GuidePage() {
         <Link href="/" className="cta-button">
           Grid Generator を開く
         </Link>
+        <p style={{ marginTop: "1em", fontSize: "16px" }}>
+          <Link href="/preset/">
+            定番レイアウトプリセット10種を見る →
+          </Link>
+        </p>
       </div>
 
       <Footer />
