@@ -153,11 +153,16 @@ export default async function PresetDetailPage({ params }: Props) {
         </div>
       </div>
 
-      <h2>HTML</h2>
-      <CodeBlock code={htmlCode} label="HTML" />
-
-      <h2>CSS</h2>
-      <CodeBlock code={cssCode} label="CSS" />
+      <div className="preset-output-container">
+        <div className="preset-output-col">
+          <h2>HTML</h2>
+          <CodeBlock code={htmlCode} label="HTML" />
+        </div>
+        <div className="preset-output-col">
+          <h2>CSS</h2>
+          <CodeBlock code={cssCode} label="CSS" />
+        </div>
+      </div>
 
       <h2>このレイアウトの解説</h2>
       <p>{preset.explanation}</p>

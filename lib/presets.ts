@@ -348,7 +348,7 @@ export function getPresetBySlug(slug: string): Preset | undefined {
 
 export function generateHtmlCode(preset: Preset): string {
   const items = preset.items
-    .map((item, i) => `  <div class="item item-${i + 1}">${item.label}</div>`)
+    .map((item, i) => `  <div class="item-${i + 1}">${item.label}</div>`)
     .join("\n");
   return `<div class="grid-container">\n${items}\n</div>`;
 }
@@ -357,9 +357,9 @@ export function generateCssCode(preset: Preset): string {
   const itemRules = preset.items
     .map(
       (item, i) =>
-        `.item-${i + 1} {\n  grid-column: ${item.startCol} / ${item.endCol};\n  grid-row: ${item.startRow} / ${item.endRow};\n}`
+        `.item-${i + 1} { grid-area: ${item.startRow} / ${item.startCol} / ${item.endRow} / ${item.endCol}; }`
     )
-    .join("\n\n");
+    .join("\n");
   return `.grid-container {
   display: grid;
   grid-template-columns: repeat(${preset.columns}, 1fr);
@@ -369,13 +369,5 @@ export function generateCssCode(preset: Preset): string {
   height: ${preset.height}px;
 }
 
-${itemRules}
-
-@media (max-width: 768px) {
-  .grid-container {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    height: auto;
-  }
-}`;
+${itemRules}`;
 }

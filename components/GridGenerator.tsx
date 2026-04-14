@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { CodeBlock } from "@/components/CodeBlock";
 
 const UNITS = ["px", "%", "vw", "vh", "em", "rem"];
-const ITEM_SIZE_OPTIONS = ["auto", "100%", "custom"];
 
 type GridItem = {
   id: string;
@@ -30,51 +30,9 @@ export function GridGenerator() {
   const [containerWidthUnit, setContainerWidthUnit] = useState("%");
   const [containerHeight, setContainerHeight] = useState(500);
   const [containerHeightUnit, setContainerHeightUnit] = useState("px");
-  // 子要素のサイズ設定
-  const [itemWidthOption, setItemWidthOption] = useState("100%");
-  const [itemWidthValue, setItemWidthValue] = useState(100);
-  const [itemWidthUnit, setItemWidthUnit] = useState("px");
-  const [itemHeightOption, setItemHeightOption] = useState("100%");
-  const [itemHeightValue, setItemHeightValue] = useState(100);
-  const [itemHeightUnit, setItemHeightUnit] = useState("px");
   const [selectedCells, setSelectedCells] = useState<string[]>([]);
   const [gridItems, setGridItems] = useState<GridItem[]>([]);
   const [isSelecting, setIsSelecting] = useState(false);
-
-  // 子要素のサイズ文字列を取得
-  const getItemWidth = () => {
-    if (itemWidthOption === "custom") {
-      return `${itemWidthValue}${itemWidthUnit}`;
-    }
-    return itemWidthOption;
-  };
-
-  const getItemHeight = () => {
-    if (itemHeightOption === "custom") {
-      return `${itemHeightValue}${itemHeightUnit}`;
-    }
-    return itemHeightOption;
-  };
-
-  // クリップボードにコピー
-  const copyToClipboard = (text: string) => {
-    navigator.clipboard
-      .writeText(text)
-      .then(() =>
-        toast.success("Copied to clipboard!", {
-          position: "bottom-center",
-          hideProgressBar: true,
-          autoClose: 500,
-        })
-      )
-      .catch(() =>
-        toast.error("Failed to copy text.", {
-          position: "bottom-center",
-          hideProgressBar: true,
-          autoClose: 500,
-        })
-      );
-  };
 
   // グリッド全体のリセット
   const resetGrid = () => {
@@ -85,12 +43,6 @@ export function GridGenerator() {
     setContainerWidthUnit("%");
     setContainerHeight(500);
     setContainerHeightUnit("px");
-    setItemWidthOption("100%");
-    setItemWidthValue(100);
-    setItemWidthUnit("px");
-    setItemHeightOption("100%");
-    setItemHeightValue(100);
-    setItemHeightUnit("px");
     setSelectedCells([]);
     setGridItems([]);
   };
@@ -272,98 +224,6 @@ export function GridGenerator() {
         <button onClick={resetGrid}>Reset Grid</button>
       </div>
       <div
-        className="controls controls-items"
-        style={{
-          width: `calc(${columns} * 200px + ${(columns - 1) * gap}px - 2em)`,
-        }}
-      >
-        <span className="controls-label">Item Size:</span>
-        <label>
-          Item Width:
-          <div className="input-with-unit">
-            <select
-              value={itemWidthOption}
-              onChange={(e) => setItemWidthOption(e.target.value)}
-            >
-              {ITEM_SIZE_OPTIONS.map((opt) => (
-                <option key={opt} value={opt}>
-                  {opt}
-                </option>
-              ))}
-            </select>
-            {itemWidthOption === "custom" && (
-              <>
-                <input
-                  type="number"
-                  value={itemWidthValue}
-                  onChange={(e) =>
-                    setItemWidthValue(
-                      Math.max(0, parseFloat(e.target.value) || 0)
-                    )
-                  }
-                />
-                <select
-                  value={itemWidthUnit}
-                  onChange={(e) => setItemWidthUnit(e.target.value)}
-                >
-                  {UNITS.map((unit) => (
-                    <option key={unit} value={unit}>
-                      {unit}
-                    </option>
-                  ))}
-                </select>
-              </>
-            )}
-          </div>
-        </label>
-        <label>
-          Item Height:
-          <div className="input-with-unit">
-            <select
-              value={itemHeightOption}
-              onChange={(e) => setItemHeightOption(e.target.value)}
-            >
-              {ITEM_SIZE_OPTIONS.map((opt) => (
-                <option key={opt} value={opt}>
-                  {opt}
-                </option>
-              ))}
-            </select>
-            {itemHeightOption === "custom" && (
-              <>
-                <input
-                  type="number"
-                  value={itemHeightValue}
-                  onChange={(e) =>
-                    setItemHeightValue(
-                      Math.max(0, parseFloat(e.target.value) || 0)
-                    )
-                  }
-                />
-                <select
-                  value={itemHeightUnit}
-                  onChange={(e) => setItemHeightUnit(e.target.value)}
-                >
-                  {UNITS.map((unit) => (
-                    <option key={unit} value={unit}>
-                      {unit}
-                    </option>
-                  ))}
-                </select>
-              </>
-            )}
-          </div>
-        </label>
-        <a
-          href="/generator/grid/guide/"
-          className="guide-link"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          使い方・FAQ
-        </a>
-      </div>
-      <div
         className="grid-container"
         style={{
           gridTemplateColumns: `repeat(${columns}, 1fr)`,
@@ -412,139 +272,44 @@ export function GridGenerator() {
           </div>
         ))}
       </div>
-      <div className="output-container">
-        <div className="output-html">
-          <h2>Generated HTML</h2>
-          <button
-            className="copy-button"
-            onClick={() =>
-              copyToClipboard(
-                `<div class="grid-container">\n${gridItems
-                  .map(
-                    (item) =>
-                      `  <div class="${item.id}">${item.content}</div>`
-                  )
-                  .join("\n")}\n</div>`
-              )
-            }
-          >
-            Copy
-          </button>
-          <pre>{`<div class="grid-container">\n${gridItems
-            .map(
-              (item) => `  <div class="${item.id}">${item.content}</div>`
-            )
-            .join("\n")}\n</div>`}</pre>
-        </div>
-        <div className="output">
-          <h2>Generated CSS</h2>
-          <button
-            className="copy-button"
-            onClick={() =>
-              copyToClipboard(
-                `.grid-container {
+      {(() => {
+        const htmlCode = `<div class="grid-container">\n${gridItems
+          .map(
+            (item, i) => `  <div class="item-${i + 1}">${item.content}</div>`
+          )
+          .join("\n")}\n</div>`;
+
+        const containerCss = `.grid-container {
   display: grid;
   grid-template-columns: repeat(${columns}, 1fr);
   grid-template-rows: repeat(${rows}, 1fr);
   gap: ${gap}px;
   width: ${containerWidth}${containerWidthUnit};
   height: ${containerHeight}${containerHeightUnit};
-}
+}`;
 
-/* 子要素の共通スタイル（プレースホルダー） */
-.grid-container > div {
-  background-color: gray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #fff;
-}
-` +
-                  gridItems
-                    .map(
-                      (item) => `
-.${item.id} {
-  grid-column: ${item.startCol} / span ${item.endCol - item.startCol + 1};
-  grid-row: ${item.startRow} / span ${item.endRow - item.startRow + 1};
-  width: ${getItemWidth()};
-  height: ${getItemHeight()};
-}
-`
-                    )
-                    .join("\n") +
-                  `
-/* レスポンシブ対応 */
-@media (max-width: 768px) {
-  .grid-container {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
+        const itemCss = gridItems
+          .map(
+            (item, i) =>
+              `.item-${i + 1} { grid-area: ${item.startRow} / ${item.startCol} / ${item.endRow + 1} / ${item.endCol + 1}; }`
+          )
+          .join("\n");
 
-  .grid-container > div {
-    grid-column: auto !important;
-    grid-row: auto !important;
-  }
-}
-`
-              )
-            }
-          >
-            Copy
-          </button>
-          <pre>
-            {`.grid-container {
-  display: grid;
-  grid-template-columns: repeat(${columns}, 1fr);
-  grid-template-rows: repeat(${rows}, 1fr);
-  gap: ${gap}px;
-  width: ${containerWidth}${containerWidthUnit};
-  height: ${containerHeight}${containerHeightUnit};
-}
+        const fullCss = `${containerCss}\n\n${itemCss}`;
 
-/* 子要素の共通スタイル（プレースホルダー） */
-.grid-container > div {
-  background-color: gray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #fff;
-}`}
-          </pre>
-          <pre>
-            {gridItems
-              .map(
-                (item) => `
-.${item.id} {
-  grid-column: ${item.startCol} / span ${item.endCol - item.startCol + 1};
-  grid-row: ${item.startRow} / span ${item.endRow - item.startRow + 1};
-  width: ${getItemWidth()};
-  height: ${getItemHeight()};
-}
-`
-              )
-              .join("\n")}
-          </pre>
-          <pre>
-            {`
-/* レスポンシブ対応 */
-@media (max-width: 768px) {
-  .grid-container {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-
-  .grid-container > div {
-    grid-column: auto !important;
-    grid-row: auto !important;
-  }
-}`}
-          </pre>
-        </div>
-      </div>
+        return (
+          <div className="preset-output-container">
+            <div className="preset-output-col">
+              <h2>HTML</h2>
+              <CodeBlock code={htmlCode} label="HTML" />
+            </div>
+            <div className="preset-output-col">
+              <h2>CSS</h2>
+              <CodeBlock code={fullCss} label="CSS" />
+            </div>
+          </div>
+        );
+      })()}
     </>
   );
 }

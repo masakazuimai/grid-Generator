@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { GridGenerator } from "@/components/GridGenerator";
 import { Footer } from "@/components/Footer";
+import "@/styles/preset.css";
 import { JsonLd } from "@/components/JsonLd";
 import {
   webApplicationJsonLd,
@@ -73,6 +74,11 @@ export default function HomePage() {
         <p>
           <a href="/generator/grid/preset/">
             レイアウトプリセット集を見る →
+          </a>
+        </p>
+        <p>
+          <a href="/generator/grid/guide/">
+            使い方・FAQを見る →
           </a>
         </p>
       </section>
