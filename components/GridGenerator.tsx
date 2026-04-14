@@ -295,7 +295,18 @@ export function GridGenerator() {
           )
           .join("\n");
 
-        const fullCss = `${containerCss}\n\n${itemCss}`;
+        const responsiveCss = `@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: auto;
+  }
+  .grid-container > * {
+    grid-area: auto;
+  }
+}`;
+
+        const fullCss = `${containerCss}\n\n${itemCss}\n\n${responsiveCss}`;
 
         return (
           <div className="preset-output-container">

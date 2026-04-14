@@ -369,5 +369,16 @@ export function generateCssCode(preset: Preset): string {
   height: ${preset.height}px;
 }
 
-${itemRules}`;
+${itemRules}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: auto;
+  }
+  .grid-container > * {
+    grid-area: auto;
+  }
+}`;
 }
