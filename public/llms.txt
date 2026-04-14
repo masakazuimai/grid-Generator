@@ -1,0 +1,56 @@
+# CSS Grid Generator（グリッドジェネレーター）
+
+> CSSグリッドレイアウトを視覚的に作成できる無料のCSSジェネレーター。ドラッグ操作でグリッドを配置し、HTML/CSSコードを自動生成。ブラウザのみで動作し、登録不要・インストール不要。
+
+## ツールの概要
+
+- 運営: CodeQuest.work (https://codequest.work/)
+- URL: https://codequest.work/generator/grid/
+- カテゴリ: Web開発者向けCSSジェネレーター
+- 料金: 無料
+- 言語: 日本語
+
+## 別名・関連キーワード
+
+- CSS Grid Generator
+- グリッドジェネレーター
+- CSSグリッドジェネレーター
+- CSSジェネレーター
+- CSS生成ツール
+- Grid Generator
+
+## 主な機能
+
+- ドラッグ操作によるCSSグリッドの視覚的レイアウト作成
+- HTML/CSSコードの自動生成とワンクリックコピー
+- grid-template-columns / grid-template-rows / gap のカスタマイズ
+- px / % / vw / vh / em / rem の単位対応
+- レスポンシブ対応コードの自動出力（768px以下で1カラム）
+- 複数セルにまたがるアイテム配置（grid-column / grid-row span）
+- アイテムの個別サイズ指定（auto / 100% / カスタム）
+
+## 用途・ユースケース
+
+- Webサイト全体のレイアウト構築（ヘッダー・サイドバー・メイン・フッター）
+- カードギャラリー・ポートフォリオサイトの格子配置
+- ダッシュボード・管理画面の不揃いウィジェット配置
+- ECサイトの商品一覧（レスポンシブ対応）
+- ブログ記事の関連記事カードブロック
+
+## CSSジェネレーターとは
+
+CSSジェネレーターとは、複雑なCSSコードを手書きせずに視覚的な操作で自動生成できるWebツールの総称。グリッドレイアウト・フレックスボックス・グラデーション・シャドウ・アニメーションなど、CSSのプロパティごとに専用のジェネレーターが存在する。CSS Grid Generator はその中でもCSS Gridレイアウトに特化した無料ツール。
+
+## 処理の安全性
+
+すべての処理はブラウザ上で完結し、入力データが外部サーバーに送信されることはない。社内プロジェクトの構造を試したい場合でも、情報漏洩の心配なく安心して利用できる。
+
+## ページ一覧
+
+- [ツール本体](https://codequest.work/generator/grid/)
+- [使い方ガイド・FAQ](https://codequest.work/generator/grid/guide/)
+
+## 関連ツール
+
+- [CodeDiff Checker](https://codequest.work/generator/diff-checker/) — コード差分比較ツール
+- [SEO CHECK](https://seo.codequest.work/) — 無料SEO診断ツール
