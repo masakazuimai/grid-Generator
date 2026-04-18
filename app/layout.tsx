@@ -29,6 +29,9 @@ export const metadata: Metadata = {
     "無料CSSツール",
   ],
   authors: [{ name: "CodeQuest.work", url: "https://codequest.work/" }],
+  alternates: {
+    canonical: "https://codequest.work/grid-generator/",
+  },
   robots: "index, follow",
   openGraph: {
     siteName: "CodeQuest.work",
