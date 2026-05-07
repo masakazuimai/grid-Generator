@@ -18,7 +18,7 @@ export function Footer() {
           | SEO CHECKはこちら →
         </a>
         <a
-          href="https://codequest.work/tag/generator/"
+          href="https://codequest.work/category/generator/"
           target="_blank"
           rel="noopener noreferrer"
         >
