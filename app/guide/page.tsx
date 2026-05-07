@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
+import { AdUnit } from "@/components/AdUnit";
 import {
   guideArticleJsonLd,
   guideHowToJsonLd,
@@ -471,6 +472,7 @@ export default function GuidePage() {
         </p>
       </div>
 
+      <AdUnit />
       <Footer />
     </div>
   );

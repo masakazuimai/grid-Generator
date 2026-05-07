@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
+import { AdUnit } from "@/components/AdUnit";
 import { presets } from "@/lib/presets";
 import "@/styles/preset.css";
 
@@ -141,6 +142,7 @@ export default function PresetIndexPage() {
       </p>
 
       </div>
+      <AdUnit />
       <Footer />
     </>
   );

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
+import { AdUnit } from "@/components/AdUnit";
 import { CodeBlock } from "@/components/CodeBlock";
 import {
   presets,
@@ -229,6 +230,7 @@ export default async function PresetDetailPage({ params }: Props) {
       </div>
 
       </div>
+      <AdUnit />
       <Footer />
     </>
   );

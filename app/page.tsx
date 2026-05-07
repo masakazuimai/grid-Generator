@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { presets } from "@/lib/presets";
 import "@/styles/preset.css";
 import { JsonLd } from "@/components/JsonLd";
+import { AdUnit } from "@/components/AdUnit";
 import {
   webApplicationJsonLd,
   mainBreadcrumbJsonLd,
@@ -88,6 +89,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      <AdUnit />
       <Footer />
     </div>
   );
