@@ -5,8 +5,11 @@ export const webApplicationJsonLd = {
   name: "CSS Grid Generator（グリッドジェネレーター）",
   alternateName: [
     "Grid Generator",
+    "Gridジェネレーター",
     "グリッドジェネレーター",
     "CSSグリッドジェネレーター",
+    "CSS Gridジェネレーター",
+    "css grid generator",
     "CSSジェネレーター",
     "CSS生成ツール",
   ],

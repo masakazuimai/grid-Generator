@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://codequest.work"),
   title: {
     default:
-      "CSSジェネレーター | CSS Grid Generator - グリッドレイアウトを無料作成",
-    template: "%s | CSSジェネレーター - CodeQuest.work",
+      "CSS Gridジェネレーター【無料】グリッドレイアウト作成ツール｜CodeQuest.work",
+    template: "%s | CSS Gridジェネレーター - CodeQuest.work",
   },
   description:
-    "無料のCSSジェネレーター。CSS Grid Generator（グリッドジェネレーター）はドラッグ操作でCSSグリッドレイアウトを視覚的に作成し、HTML/CSSコードを自動生成します。初心者でも簡単にレスポンシブなグリッドレイアウトが作れます。",
+    "無料のCSS Gridジェネレーター。ドラッグ操作でCSSグリッドレイアウトを視覚的に作成し、HTML/CSSコードを自動生成。登録不要でブラウザですぐ使えるグリッドレイアウト作成ツールです。",
   keywords: [
     "CSSジェネレーター",
     "css ジェネレーター",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "CodeQuest.work", url: "https://codequest.work/" }],
   alternates: {
-    canonical: "https://codequest.work/grid-generator/",
+    canonical: "https://codequest.work/generator/grid/",
   },
   robots: "index, follow",
   openGraph: {

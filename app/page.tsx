@@ -15,22 +15,22 @@ import {
 
 export const metadata: Metadata = {
   title:
-    "CSSジェネレーター | CSS Grid Generator - グリッドレイアウトを無料作成",
+    "CSS Gridジェネレーター【無料】グリッドレイアウト作成ツール｜CodeQuest.work",
   description:
-    "CSSジェネレーター無料ツール。ドラッグ操作でCSSグリッドレイアウトを視覚的に作成し、HTML/CSSコードを自動生成します。登録不要・初心者OK。",
+    "無料のCSS Gridジェネレーター。ドラッグ操作でCSSグリッドレイアウトを視覚的に作成し、HTML/CSSコードを自動生成。登録不要でブラウザですぐ使えるレイアウト作成ツール。",
   openGraph: {
     title:
-      "CSSジェネレーター | CSS Grid Generator - グリッドレイアウトを無料作成",
+      "CSS Gridジェネレーター【無料】グリッドレイアウト作成ツール｜CodeQuest.work",
     description:
-      "ドラッグ操作でCSSグリッドレイアウトを視覚的に作成し、HTML/CSSコードを自動生成する無料のCSSジェネレーター。",
+      "無料のCSS Gridジェネレーター。ドラッグ操作でCSSグリッドレイアウトを視覚的に作成し、HTML/CSSコードを自動生成。",
     images: ["/generator/grid/og-image.png"],
     url: "https://codequest.work/generator/grid/",
   },
   twitter: {
     title:
-      "CSSジェネレーター | CSS Grid Generator - グリッドレイアウトを無料作成",
+      "CSS Gridジェネレーター【無料】グリッドレイアウト作成ツール｜CodeQuest.work",
     description:
-      "ドラッグ操作でCSSグリッドレイアウトを視覚的に作成し、HTML/CSSコードを自動生成する無料のCSSジェネレーター。",
+      "無料のCSS Gridジェネレーター。ドラッグ操作でCSSグリッドレイアウトを視覚的に作成し、HTML/CSSコードを自動生成。",
     images: ["/generator/grid/og-image.png"],
   },
   alternates: {
@@ -48,11 +48,11 @@ export default function HomePage() {
       <header>
         <h1>
           CSS Grid Generator
-          <span className="header-sub">グリッドジェネレーター</span>
+          <span className="header-sub">CSSグリッドジェネレーター</span>
         </h1>
         <p>
           ドラッグ操作で<strong>CSSグリッドレイアウト</strong>
-          を視覚的に作成し、HTML/CSSコードを自動生成する無料ツール
+          を視覚的に作成し、HTML/CSSコードを自動生成する無料のGridジェネレーター
         </p>
       </header>
 
