@@ -2,7 +2,7 @@
 export const webApplicationJsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "CSS Grid Generator（グリッドジェネレーター）",
+  name: "Gridジェネレーター（CSS Grid Generator）",
   alternateName: [
     "Grid Generator",
     "Gridジェネレーター",
