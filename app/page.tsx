@@ -17,12 +17,12 @@ export const metadata: Metadata = {
   title:
     "Gridジェネレーター【無料】グリッドレイアウト作成ツール｜CodeQuest.work",
   description:
-    "無料のGridジェネレーター。ドラッグ操作でCSSグリッドレイアウトを視覚的に作成し、HTML/CSSコードを自動生成。登録不要でブラウザですぐ使えるレイアウト作成ツール。",
+    "無料のGridジェネレーター。ドラッグ操作でCSSグリッドレイアウトを視覚的に作成し、AIにもそのまま渡せるHTML/CSSコードを自動生成。登録不要でブラウザですぐ使えます。",
   openGraph: {
     title:
       "Gridジェネレーター【無料】グリッドレイアウト作成ツール｜CodeQuest.work",
     description:
-      "無料のGridジェネレーター。ドラッグ操作でCSSグリッドレイアウトを視覚的に作成し、HTML/CSSコードを自動生成。",
+      "無料のGridジェネレーター。ドラッグ操作でCSSグリッドレイアウトを視覚的に作成し、AIにもそのまま渡せるHTML/CSSコードを自動生成。",
     images: ["/generator/grid/og-image.png"],
     url: "https://codequest.work/generator/grid/",
   },
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title:
       "Gridジェネレーター【無料】グリッドレイアウト作成ツール｜CodeQuest.work",
     description:
-      "無料のGridジェネレーター。ドラッグ操作でCSSグリッドレイアウトを視覚的に作成し、HTML/CSSコードを自動生成。",
+      "無料のGridジェネレーター。ドラッグ操作でCSSグリッドレイアウトを視覚的に作成し、AIにもそのまま渡せるHTML/CSSコードを自動生成。",
     images: ["/generator/grid/og-image.png"],
   },
   alternates: {
@@ -59,32 +59,26 @@ export default function HomePage() {
       <GridGenerator />
 
       <section className="preset-page">
-        <h2>定番レイアウトプリセット</h2>
-        <p className="preset-lead">
-          ホーリーグレイル・12カラム・カードギャラリー・ダッシュボードなど、CSS
-          Gridで作る定番レイアウト{presets.length}
-          種をコピペで使えるプリセットとして公開しています。
-        </p>
         <div className="preset-index-grid">
-          {presets.map((preset) => (
-            <Link
-              key={preset.slug}
-              href={`/preset/${preset.slug}/`}
-              className="preset-index-card"
-            >
-              <span className="preset-index-category">{preset.category}</span>
-              <div className="preset-index-title">{preset.shortTitle}</div>
-              <p className="preset-index-desc">{preset.description}</p>
-            </Link>
-          ))}
+          <Link href="/preset/" className="preset-index-card">
+            <span className="preset-index-category">プリセット</span>
+            <div className="preset-index-title">定番レイアウトプリセット</div>
+            <p className="preset-index-desc">
+              ホーリーグレイル・12カラム・カードギャラリー・ダッシュボードなど、CSS
+              Gridで作る定番レイアウト{presets.length}
+              種をコピペで使える形で公開しています。
+            </p>
+            <span className="preset-index-arrow">プリセット一覧を見る →</span>
+          </Link>
           <Link href="/guide/" className="preset-index-card">
             <span className="preset-index-category">ガイド</span>
-            <div className="preset-index-title">使い方・FAQ</div>
+            <div className="preset-index-title">使い方ガイド・FAQ</div>
             <p className="preset-index-desc">
               CSS Grid
               Generatorの基本操作、よくある質問、CSS
               GridとFlexboxの使い分けなどを初心者向けに解説しています。
             </p>
+            <span className="preset-index-arrow">ガイドを読む →</span>
           </Link>
         </div>
       </section>

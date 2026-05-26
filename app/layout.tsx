@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s | Gridジェネレーター - CodeQuest.work",
   },
   description:
-    "無料のGridジェネレーター。ドラッグ操作でCSSグリッドレイアウトを視覚的に作成し、HTML/CSSコードを自動生成。登録不要でブラウザですぐ使えるグリッドレイアウト作成ツールです。",
+    "無料のGridジェネレーター。ドラッグ操作でCSSグリッドレイアウトを視覚的に作成し、AIにもそのまま渡せるHTML/CSSコードを自動生成。登録不要でブラウザですぐ使えます。",
   keywords: [
     "CSSジェネレーター",
     "css ジェネレーター",

@@ -14,7 +14,7 @@ export const webApplicationJsonLd = {
     "CSS生成ツール",
   ],
   description:
-    "CSS Grid Generator（グリッドジェネレーター）は、CSSグリッドレイアウトを視覚的に作成できる無料のCSSジェネレーター。ドラッグ操作でグリッドを配置し、HTML/CSSコードを自動生成します。",
+    "CSS Grid Generator（グリッドジェネレーター）は、CSSグリッドレイアウトを視覚的に作成できる無料のCSSジェネレーター。ドラッグ操作でグリッドを配置し、AIにもそのまま渡せるHTML/CSSコードを自動生成します。",
   url: "https://codequest.work/generator/grid/",
   applicationCategory: "DeveloperApplication",
   applicationSubCategory: "WebDesignTool",

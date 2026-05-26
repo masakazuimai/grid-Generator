@@ -265,3 +265,11 @@
   color: #626264;
   line-height: 1.6;
 }
+
+.preset-index-arrow {
+  display: inline-block;
+  margin-top: 1em;
+  font-size: 16px;
+  font-weight: bold;
+  color: #bfa88f;
+}
