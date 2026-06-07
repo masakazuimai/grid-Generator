@@ -237,6 +237,111 @@ export const guideHowToJsonLd = {
   totalTime: "PT2M",
 };
 
+// ===== 英語版（/generator/grid/en/）用の構造化データ =====
+
+export const webApplicationJsonLdEn = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "CSS Grid Generator",
+  alternateName: ["Grid Generator", "CSS Grid Layout Generator", "Grid Layout Generator"],
+  description:
+    "CSS Grid Generator is a free tool to visually build CSS grid layouts. Drag to place grid items and instantly get HTML/CSS code you can copy or hand to AI.",
+  url: "https://codequest.work/generator/grid/en/",
+  applicationCategory: "DeveloperApplication",
+  applicationSubCategory: "WebDesignTool",
+  operatingSystem: "Any (Web Browser)",
+  browserRequirements: "Requires JavaScript. Requires HTML5.",
+  softwareVersion: "1.0",
+  inLanguage: "en",
+  isAccessibleForFree: true,
+  image: "https://codequest.work/generator/grid/og-image.png",
+  screenshot: "https://codequest.work/generator/grid/og-image.png",
+  featureList: [
+    "Visually build CSS grid layouts by dragging",
+    "Auto-generate HTML/CSS code with one-click copy",
+    "Customize grid-template-columns / rows / gap",
+    "Units: px / % / vw / vh / em / rem",
+    "Auto-generated responsive code",
+    "Span items across multiple cells",
+    "Runs fully in the browser (no signup, free)",
+  ],
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  author: {
+    "@type": "Person",
+    name: "Masakazu Imai",
+    alternateName: "今井政和",
+    url: "https://codequest.work/author/masakazu_imai/",
+    jobTitle: "Executive Director / Frontend Engineer",
+    description:
+      "Web developer with 20+ years of experience, covering frontend development, SEO, and team management.",
+    sameAs: [
+      "https://x.com/imai_director",
+      "https://github.com/masakazuimai",
+    ],
+    worksFor: {
+      "@type": "Organization",
+      name: "CodeQuest.work",
+      url: "https://codequest.work/",
+    },
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "CodeQuest.work",
+    url: "https://codequest.work/",
+  },
+};
+
+export const mainBreadcrumbJsonLdEn = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "CodeQuest.work",
+      item: "https://codequest.work/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "CSS Grid Generator",
+      item: "https://codequest.work/generator/grid/en/",
+    },
+  ],
+};
+
+export const faqItemsEn = [
+  {
+    question: "What is CSS Grid Generator?",
+    answer:
+      "CSS Grid Generator is a free online tool to visually build CSS grid layouts. Drag to place grid items and it auto-generates the matching HTML/CSS code.",
+  },
+  {
+    question: "What is CSS Grid?",
+    answer:
+      "CSS Grid is a CSS feature that lets you control page layout in two dimensions (rows and columns). Using properties like grid-template-columns, grid-template-rows, and gap, you can build complex layouts easily.",
+  },
+  {
+    question: "How do I use the grid generator?",
+    answer:
+      "1. Set the number of columns and rows. 2. Drag on the grid to place items. 3. Copy the generated HTML/CSS and paste it into your project. Gap, width, and height are customizable too.",
+  },
+  {
+    question: "What's the difference between CSS Grid and Flexbox?",
+    answer:
+      "CSS Grid is suited to two-dimensional layouts (rows and columns at once), while Flexbox is suited to one-dimensional layouts (a row or a column). Grid is typically used for overall page layout and Flexbox for arranging items within a component.",
+  },
+  {
+    question: "Is this tool free?",
+    answer:
+      "Yes, CSS Grid Generator is completely free. No account is required — you can start building grid layouts in your browser right away.",
+  },
+];
+
 // ガイドページ用パンくず
 export const guideBreadcrumbJsonLd = {
   "@context": "https://schema.org",

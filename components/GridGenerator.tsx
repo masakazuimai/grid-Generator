@@ -7,6 +7,12 @@ import { CodeBlock } from "@/components/CodeBlock";
 
 const UNITS = ["px", "%", "vw", "vh", "em", "rem"];
 
+// 言語別の実行時メッセージ（UIラベルは英語共通、これらのみ切替）
+const STRINGS = {
+  ja: { overlap: "既存のアイテムと重複しています", deleteHint: "ダブルクリックで削除" },
+  en: { overlap: "Overlaps with an existing item", deleteHint: "Double-click to remove" },
+} as const;
+
 type GridItem = {
   id: string;
   startRow: number;
@@ -22,7 +28,8 @@ type Cell = {
   col: number;
 };
 
-export function GridGenerator() {
+export function GridGenerator({ lang = "ja" }: { lang?: "ja" | "en" }) {
+  const t = STRINGS[lang];
   const [columns, setColumns] = useState(5);
   const [rows, setRows] = useState(5);
   const [gap, setGap] = useState(8);
@@ -109,7 +116,7 @@ export function GridGenerator() {
       });
 
       if (hasOverlap) {
-        toast.warning("既存のアイテムと重複しています", {
+        toast.warning(t.overlap, {
           position: "bottom-center",
           hideProgressBar: true,
           autoClose: 1500,
@@ -266,7 +273,7 @@ export function GridGenerator() {
               gridRow: `${item.startRow} / ${item.endRow + 1}`,
             }}
             onDoubleClick={() => handleItemDoubleClick(item.id)}
-            title="ダブルクリックで削除"
+            title={t.deleteHint}
           >
             {item.content}
           </div>
@@ -312,11 +319,11 @@ export function GridGenerator() {
           <div className="preset-output-container">
             <div className="preset-output-col">
               <h2>HTML</h2>
-              <CodeBlock code={htmlCode} label="HTML" />
+              <CodeBlock code={htmlCode} label="HTML" lang={lang} />
             </div>
             <div className="preset-output-col">
               <h2>CSS</h2>
-              <CodeBlock code={fullCss} label="CSS" />
+              <CodeBlock code={fullCss} label="CSS" lang={lang} />
             </div>
           </div>
         );

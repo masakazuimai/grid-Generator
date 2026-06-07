@@ -5,10 +5,12 @@ import { useState } from "react";
 type Props = {
   readonly code: string;
   readonly label?: string;
+  readonly lang?: "ja" | "en";
 };
 
-export function CodeBlock({ code, label = "コード" }: Props) {
+export function CodeBlock({ code, label = "コード", lang = "ja" }: Props) {
   const [copied, setCopied] = useState(false);
+  const copyLabel = lang === "en" ? `Copy ${label}` : `${label}をコピー`;
 
   const handleCopy = async () => {
     try {
@@ -26,7 +28,7 @@ export function CodeBlock({ code, label = "コード" }: Props) {
         type="button"
         className="preset-copy-button"
         onClick={handleCopy}
-        aria-label={`${label}をコピー`}
+        aria-label={copyLabel}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

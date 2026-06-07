@@ -35,6 +35,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://codequest.work/generator/grid/",
+    languages: {
+      ja: "https://codequest.work/generator/grid/",
+      en: "https://codequest.work/generator/grid/en/",
+      "x-default": "https://codequest.work/generator/grid/",
+    },
   },
 };
 
@@ -46,6 +51,11 @@ export default function HomePage() {
       <JsonLd data={buildFaqJsonLd(faqItems)} />
 
       <header>
+        <p className="lang-switch">
+          <span aria-current="true">日本語</span>
+          <span aria-hidden="true"> / </span>
+          <Link href="/en/" hrefLang="en">English</Link>
+        </p>
         <h1>
           CSS Grid Generator
           <span className="header-sub">CSSグリッドジェネレーター</span>
