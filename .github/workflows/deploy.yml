@@ -2,19 +2,17 @@ name: Build and Deploy to ConoHa WING
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+    paths-ignore:
+      - '*.md'
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
@@ -25,14 +23,22 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy to ConoHa WING via lftp
-        env:
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      - name: Setup SSH
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq lftp
-          # 認証情報はargv(-u)で渡し、コマンド文字列にはパスワードを含めない。
-          # パスワードの特殊文字(#等)がlftpのパーサを壊すのを防ぐ。
-          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "$FTP_SERVER" -e "set ftp:ssl-allow yes; set ftp:ssl-force yes; set ssl:verify-certificate no; set net:max-retries 3; set net:timeout 30; mirror -R --verbose --parallel=2 ./out/ /public_html/codequest.work/generator/grid/; bye"
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy out/ via scp
+        env:
+          REMOTE_USER: ${{ secrets.SSH_USER }}
+          REMOTE_HOST: ${{ secrets.SSH_HOST }}
+          REMOTE_PORT: ${{ secrets.SSH_PORT }}
+          REMOTE_PATH: ${{ secrets.DEPLOY_PATH }}
+        run: |
+          PORT=$(echo "${REMOTE_PORT}" | tr -d '[:space:]')
+          DEST=$(echo "${REMOTE_PATH}" | tr -d '[:space:]')
+          REMOTE="${REMOTE_USER}@${REMOTE_HOST}"
+          ssh -p "${PORT}" "${REMOTE}" "mkdir -p ${DEST}"
+          scp -P "${PORT}" -r ./out/* "${REMOTE}:${DEST}/"
