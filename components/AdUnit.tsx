@@ -22,9 +22,11 @@ export function AdUnit() {
       <ins
         className="adsbygoogle"
         ref={adRef}
-        style={{ display: "inline-block", width: "100%", maxWidth: "728px", height: "90px" }}
+        style={{ display: "block" }}
         data-ad-client="ca-pub-4871781946658288"
         data-ad-slot="7493033745"
+        data-ad-format="horizontal"
+        data-full-width-responsive="true"
       />
     </div>
   );
