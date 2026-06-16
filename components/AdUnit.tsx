@@ -18,7 +18,7 @@ export function AdUnit() {
   }, []);
 
   return (
-    <div style={{ textAlign: "center", margin: "2em auto", maxWidth: "728px" }}>
+    <div style={{ textAlign: "center", margin: "2em auto", maxWidth: "728px", minHeight: "90px" }}>
       <ins
         className="adsbygoogle"
         ref={adRef}
