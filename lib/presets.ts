@@ -308,6 +308,38 @@ export const presets: readonly Preset[] = [
       "ブログレイアウトは「メイン3：サイドバー1」のような比率で2カラムを構成するのが一般的です。grid-template-columnsを3fr 1frや4fr 1frに指定するだけで自然な比率が作れます。サイドバーには目次・プロフィール・関連記事などを配置し、モバイルではgrid-template-columns: 1frに切り替えて縦積みにします。",
   },
   {
+    slug: "bento-grid",
+    title: "ベントーグリッドレイアウトのCSS Grid実装",
+    shortTitle: "ベントーグリッド",
+    category: "モダンUI",
+    description:
+      "大小のタイルを敷き詰めるトレンドのベントーグリッドをCSS Gridで実装。機能紹介セクションやサービスサイトのファーストビューに最適な非対称タイルレイアウトです。",
+    keywords: [
+      "ベントーグリッド CSS",
+      "bento grid layout",
+      "bento UI CSS",
+      "タイル レイアウト グリッド",
+      "非対称 カード CSS",
+    ],
+    columns: 4,
+    rows: 3,
+    gap: 12,
+    height: 500,
+    items: [
+      { label: "tile-1", startCol: 1, endCol: 3, startRow: 1, endRow: 3 },
+      { label: "tile-2", startCol: 3, endCol: 5, startRow: 1, endRow: 2 },
+      { label: "tile-3", startCol: 3, endCol: 4, startRow: 2, endRow: 3 },
+      { label: "tile-4", startCol: 4, endCol: 5, startRow: 2, endRow: 3 },
+      { label: "tile-5", startCol: 1, endCol: 2, startRow: 3, endRow: 4 },
+      { label: "tile-6", startCol: 2, endCol: 4, startRow: 3, endRow: 4 },
+      { label: "tile-7", startCol: 4, endCol: 5, startRow: 3, endRow: 4 },
+    ],
+    useCase:
+      "SaaS・アプリ・コーポレートサイトの機能紹介セクションやファーストビューなど、複数の要素にメリハリをつけて魅力的に見せたい場面に最適です。Apple風・モダンなデザインのサイトで近年定番になっています。",
+    explanation:
+      "ベントー（弁当）グリッドは、日本の弁当箱のように大小の仕切りでコンテンツを敷き詰めるレイアウトで、AppleやLinearをはじめとするモダンなサービスサイトで多用されています。CSS Gridのgrid-columnとgrid-rowで各タイルのspanを明示的に指定することで、主役の大タイルと脇を固める小タイルを自由に組み合わせられます。本プリセットでは左上に2×2の大タイルを置き、その周囲を横長タイルと正方形タイルで埋める構成です。border-radiusを大きめに取り、各タイルに余白を持たせると弁当箱らしいリズムが生まれます。",
+  },
+  {
     slug: "product-grid",
     title: "商品一覧（4列グリッド）のCSS実装",
     shortTitle: "商品一覧4列",
