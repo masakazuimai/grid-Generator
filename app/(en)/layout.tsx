@@ -58,9 +58,11 @@ export default function EnRootLayout({
             gtag('config', 'G-7Z6M3CJEV3');
           `}
         </Script>
-        {/* Google AdSense（共有ローダーが adsbygoogle.js 読み込み・幅確定後の push を担当） */}
+        {/* Google AdSense */}
         <Script
-          src="https://codequest.work/generator/_shared/adsense.js?v=20260619b"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4871781946658288"
+          crossOrigin="anonymous"
           strategy="afterInteractive"
         />
       </head>
