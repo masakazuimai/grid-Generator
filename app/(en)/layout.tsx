@@ -60,7 +60,7 @@ export default function EnRootLayout({
         </Script>
         {/* Google AdSense（共有ローダーが adsbygoogle.js 読み込み・幅確定後の push を担当） */}
         <Script
-          src="https://codequest.work/generator/_shared/adsense.js"
+          src="https://codequest.work/generator/_shared/adsense.js?v=20260619b"
           strategy="afterInteractive"
         />
       </head>
