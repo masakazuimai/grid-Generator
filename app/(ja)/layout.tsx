@@ -69,11 +69,9 @@ export default function RootLayout({
             gtag('config', 'G-7Z6M3CJEV3');
           `}
         </Script>
-        {/* Google AdSense */}
+        {/* Google AdSense（共有ローダーが adsbygoogle.js 読み込み・幅確定後の push を担当） */}
         <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4871781946658288"
-          crossOrigin="anonymous"
+          src="https://codequest.work/generator/_shared/adsense.js"
           strategy="afterInteractive"
         />
       </head>

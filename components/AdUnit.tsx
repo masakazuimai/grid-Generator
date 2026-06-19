@@ -1,27 +1,9 @@
-"use client";
-
-import { useEffect, useRef } from "react";
-
+// push は共有ローダー（_shared/adsense.js）が幅確定後に行う。ここでは枠のみ置く。
 export function AdUnit() {
-  const adRef = useRef<HTMLModElement>(null);
-  const pushed = useRef(false);
-
-  useEffect(() => {
-    if (pushed.current) return;
-    pushed.current = true;
-    try {
-      ((window as unknown as { adsbygoogle: unknown[] }).adsbygoogle =
-        (window as unknown as { adsbygoogle: unknown[] }).adsbygoogle || []).push({});
-    } catch {
-      // AdSense未ロード時は無視
-    }
-  }, []);
-
   return (
     <div style={{ textAlign: "center", margin: "2em auto", maxWidth: "728px", minHeight: "90px" }}>
       <ins
         className="adsbygoogle"
-        ref={adRef}
         style={{ display: "block" }}
         data-ad-client="ca-pub-4871781946658288"
         data-ad-slot="7493033745"
