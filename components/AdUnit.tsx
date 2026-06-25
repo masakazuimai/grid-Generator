@@ -18,15 +18,13 @@ export function AdUnit() {
   }, []);
 
   return (
-    <div style={{ textAlign: "center", margin: "2em auto", maxWidth: "728px", minHeight: "90px" }}>
+    <div className="ad-wrap" style={{ textAlign: "center", margin: "2em auto" }}>
       <ins
-        className="adsbygoogle"
+        className="adsbygoogle ad-banner"
         ref={adRef}
-        style={{ display: "block" }}
+        style={{ display: "inline-block" }}
         data-ad-client="ca-pub-4871781946658288"
         data-ad-slot="5027916226"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
       />
     </div>
   );
