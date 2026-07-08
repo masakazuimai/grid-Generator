@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
 import { AdUnit } from "@/components/AdUnit";
+import { presets } from "@/lib/presets";
 import {
   guideArticleJsonLd,
   guideHowToJsonLd,
@@ -15,10 +16,10 @@ import "@/styles/guide.css";
 export const metadata: Metadata = {
   title: {
     absolute:
-      "CSSジェネレーターの使い方ガイド | CSS Grid Generator - CodeQuest.work",
+      "CSS Gridジェネレーターの使い方ガイド | 初心者向け完全マニュアル - CodeQuest.work",
   },
   description:
-    "無料CSSジェネレーターの使い方ガイド。CSS Grid Generatorでドラッグ操作によるグリッドレイアウト作成、CSS GridとFlexboxの違い、他のCSSジェネレーターとの比較、よくある質問まで初心者向けに解説します。",
+    "無料CSS Gridジェネレーターの使い方ガイド。ドラッグ操作によるグリッドレイアウト作成、CSS GridとFlexboxの違い、他のCSSジェネレーターとの比較、よくある質問まで初心者向けに解説します。",
   keywords: [
     "CSSジェネレーター 使い方",
     "CSSジェネレーター おすすめ",
@@ -34,18 +35,18 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      "CSSジェネレーターの使い方ガイド | CSS Grid Generator 完全マニュアル",
+      "CSS Gridジェネレーターの使い方ガイド | 初心者向け完全マニュアル",
     description:
-      "CSSジェネレーター無料ツールの使い方を3ステップで解説。CSS GridとFlexboxの違い、他ツールとの比較、よくある質問まで網羅。",
+      "無料CSS Gridジェネレーターの使い方を3ステップで解説。CSS GridとFlexboxの違い、他ツールとの比較、よくある質問まで網羅。",
     images: ["/generator/grid/og-image.png"],
     url: "https://codequest.work/generator/grid/guide/",
     type: "article",
   },
   twitter: {
     title:
-      "CSSジェネレーターの使い方ガイド | CSS Grid Generator 完全マニュアル",
+      "CSS Gridジェネレーターの使い方ガイド | 初心者向け完全マニュアル",
     description:
-      "CSSジェネレーター無料ツールの使い方を3ステップで解説。CSS GridとFlexboxの違い、他ツールとの比較、よくある質問まで網羅。",
+      "無料CSS Gridジェネレーターの使い方を3ステップで解説。CSS GridとFlexboxの違い、他ツールとの比較、よくある質問まで網羅。",
     images: ["/generator/grid/og-image.png"],
   },
   alternates: {
@@ -467,7 +468,7 @@ export default function GuidePage() {
         </Link>
         <p style={{ marginTop: "1em", fontSize: "16px" }}>
           <Link href="/preset/">
-            定番レイアウトプリセット10種を見る →
+            定番レイアウトプリセット{presets.length}種を見る →
           </Link>
         </p>
       </div>

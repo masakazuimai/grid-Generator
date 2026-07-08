@@ -8,11 +8,9 @@ import "@/styles/preset.css";
 
 export const metadata: Metadata = {
   title: {
-    absolute:
-      "CSS Gridレイアウト集 | 定番プリセット10種をコピペで使える - CodeQuest.work",
+    absolute: `CSS Gridレイアウト集 | 定番プリセット${presets.length}種をコピペで使える - CodeQuest.work`,
   },
-  description:
-    "CSS Gridで作る定番レイアウト10種をプリセットとして公開。ホーリーグレイル・12カラム・カードギャラリー・ダッシュボード・マガジン・料金表など、HTML/CSSコードをコピペで使えます。",
+  description: `CSS Gridで作る定番レイアウト${presets.length}種をプリセットとして公開。ホーリーグレイル・12カラム・カードギャラリー・ダッシュボード・マガジン・料金表など、HTML/CSSコードをコピペで使えます。`,
   keywords: [
     "CSS Grid レイアウト集",
     "CSS Grid サンプル",
@@ -28,19 +26,15 @@ export const metadata: Metadata = {
     canonical: "https://codequest.work/generator/grid/preset/",
   },
   openGraph: {
-    title:
-      "CSS Gridレイアウト集 | 定番プリセット10種をコピペで使える",
-    description:
-      "CSS Gridで作る定番レイアウト10種をプリセット公開。ホーリーグレイル・12カラム・カードギャラリー他、HTML/CSSコードをコピペで使えます。",
+    title: `CSS Gridレイアウト集 | 定番プリセット${presets.length}種をコピペで使える`,
+    description: `CSS Gridで作る定番レイアウト${presets.length}種をプリセット公開。ホーリーグレイル・12カラム・カードギャラリー他、HTML/CSSコードをコピペで使えます。`,
     images: ["/generator/grid/og-image.png"],
     url: "https://codequest.work/generator/grid/preset/",
     type: "website",
   },
   twitter: {
-    title:
-      "CSS Gridレイアウト集 | 定番プリセット10種",
-    description:
-      "CSS Gridの定番レイアウト10種をコピペで使えるプリセット集。",
+    title: `CSS Gridレイアウト集 | 定番プリセット${presets.length}種`,
+    description: `CSS Gridの定番レイアウト${presets.length}種をコピペで使えるプリセット集。`,
     images: ["/generator/grid/og-image.png"],
   },
 };
@@ -74,8 +68,7 @@ const collectionJsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   name: "CSS Gridレイアウトプリセット集",
-  description:
-    "CSS Gridで作る定番レイアウト10種のプリセット集。HTML/CSSコードをコピペで使えます。",
+  description: `CSS Gridで作る定番レイアウト${presets.length}種のプリセット集。HTML/CSSコードをコピペで使えます。`,
   url: "https://codequest.work/generator/grid/preset/",
   hasPart: presets.map((p) => ({
     "@type": "WebPage",
@@ -89,8 +82,7 @@ const itemListJsonLd = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: "CSS Gridレイアウトプリセット一覧",
-  description:
-    "ホーリーグレイル・12カラム・カードギャラリー・ダッシュボードなど、CSS Gridで作る定番レイアウト10種の一覧。",
+  description: `ホーリーグレイル・12カラム・カードギャラリー・ダッシュボードなど、CSS Gridで作る定番レイアウト${presets.length}種の一覧。`,
   numberOfItems: presets.length,
   itemListElement: presets.map((p, i) => ({
     "@type": "ListItem",
